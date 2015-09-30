@@ -19,3 +19,30 @@ body {
   color: $base-font-color;
   font-family: $base-font-family;
 }
+
+.create-contact {
+  width: 350px;
+  margin: 0 auto;
+  border: 1px solid black;
+  padding: 10px;
+
+  >* {
+    display: block;
+    line-height: 35px;
+
+    >* {
+      display: inline-block;
+    }
+
+    label {
+      width: 150px;
+    }
+
+
+  }
+}
+
+.submit-button {
+  margin: 10px auto 0;
+  width: 100px
+}
