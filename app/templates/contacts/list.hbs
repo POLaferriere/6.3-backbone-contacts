@@ -1,9 +1,23 @@
+<h1>Contact List</h1>
+
 {{#each this}}
+{{#if pierreContact}}
 <li>
-  <h1>{{name}}</h1>
-  <h2>Email: {{email}}</h2>
-  <h2>Phone: {{phoneNumber}}</h2>
-  <h3>Twitter: {{twitterName}}</h3>
+  {{#if name}}
+    <h1>{{name}}</h1>
+  {{/if}}
+  {{#if email}}
+    <h2>Email: {{email}}</h2>
+  {{/if}}
+  {{#if phoneNumber}}
+    <h2>Phone: {{phoneNumber}}</h2>
+  {{/if}}
+  {{#if twitterName}}
+    <h3>Twitter: {{twitterName}}</h3>
+  {{/if}}
+  {{#if linkedin}}
   <h3>LinkedIn: {{linkedin}}</h3>
+  {{/if}}
 </li>
+{{/if}}
 {{/each}}

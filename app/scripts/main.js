@@ -8,15 +8,14 @@ $(document).ready(function(){
   // prepend the contents of `app/templates/application.hbs` into `body`
   app.contacts = new ContactCollection();
 
-  var createContactView = new CreateContactView();
+  window.createContactView = new CreateContactView();
   $('#container').append(createContactView.render().el);
 
-  var listView = new ListView({
+  window.listView = new ListView({
     collection: app.contacts
   });
   listView.collection.fetch();
   listView.collection.on('sync', function(e){
-    console.log(e);
     $('#container').append(listView.render().el);
   });
 });

@@ -26,6 +26,7 @@ var CreateContactView = Backbone.View.extend({
       results[input.name] = input.value;
     });
     results.name = results.firstName + " " + results.lastName;
+    results.pierreContact = true;
     return _.omit(results, 'firstName', 'lastName');
   },
 
