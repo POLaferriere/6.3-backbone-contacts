@@ -1,5 +1,6 @@
 import ContactCollection from 'models/contact';
 import CreateContactView from 'views/FormView';
+import ListView from 'views/ListView';
 
 window.app = {};
 
@@ -9,4 +10,13 @@ $(document).ready(function(){
 
   var createContactView = new CreateContactView();
   $('#container').append(createContactView.render().el);
+
+  var listView = new ListView({
+    collection: app.contacts
+  });
+  listView.collection.fetch();
+  listView.collection.on('sync', function(e){
+    console.log(e);
+    $('#container').append(listView.render().el);
+  });
 });
